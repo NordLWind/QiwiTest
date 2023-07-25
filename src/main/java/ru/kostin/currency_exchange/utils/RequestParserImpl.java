@@ -13,7 +13,7 @@ public class RequestParserImpl implements RequestParser<RequestDto> {
     @Override
     public RequestDto parseRequest(String request) {
 
-        if (!request.substring(0, request.indexOf("-")).trim().equals("currency_rates")) {
+        if (!request.startsWith("currency_rates")) {
             throw new BadRequestException();
         }
 
